@@ -1,6 +1,7 @@
 # statement-downloader
 
 Downloads Schwab statements
+
 Inspired by https://github.com/dcwangmit01/statement-downloader :)
 
 ## Requirements
