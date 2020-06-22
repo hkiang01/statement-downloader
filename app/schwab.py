@@ -3,6 +3,7 @@ from typing import List
 
 from selenium import webdriver
 from selenium.webdriver.remote.webelement import WebElement
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 class Schwab:
@@ -58,13 +59,21 @@ class Schwab:
 
         # click search
         self.driver.find_element_by_xpath("//*[@id='btnSearch']").click()
-
+        time.sleep(5)
         # self.driver.find_element_by_xpath("")
 
+        # select table rows
         table = self.driver.find_element_by_xpath("//*[@id='gridTable']")
         rows: List[WebElement] = table.find_elements_by_xpath(
             ".//tr[@scope='row']"
         )
         for row in rows:
+            # position browser
+            ActionChains(self.driver).move_to_element(row).perform()
+            time.sleep(0.25)
+            self.driver.execute_script("arguments[0].scrollIntoView();", row)
+            time.sleep(0.25)
+
+            # download statement
             save_button = row.find_element_by_xpath(".//a[@role='link']")
             save_button.click()
