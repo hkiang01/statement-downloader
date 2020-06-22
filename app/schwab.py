@@ -9,7 +9,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 class Schwab:
     def __init__(self, download_dir):
         # set profile to enable easier downloading
-        # see https://selenium-python.readthedocs.io/faq.html#how-to-auto-save-files-using-custom-firefox-profile  # noqa: E504
+        # see https://selenium-python.readthedocs.io/faq.html#how-to-auto-save-files-using-custom-firefox-profile  # noqa: E501
 
         fp = webdriver.FirefoxProfile()
 
