@@ -12,6 +12,6 @@ Inspired by https://github.com/dcwangmit01/statement-downloader :)
 
 ```
 pip install -r requirements.txt
-ython app/main.py download_statements <download_dir>
+python app/main.py download_statements <download_dir>
 # Follow prompts
 ```
