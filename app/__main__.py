@@ -1,3 +1,5 @@
-from .app import main
+import fire
+from .main import main
 
-main()
+if __name__ == "__main__":
+    fire.Fire(main)
